@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+      
+         
+        <label for="annne">
+            Entrer une annee ici
+        <input type="text"name="annee" id="annee">
+        <input type="button"onclick="salah()"Value="Go">
+        </label>
+         
+        <script>
+            function salah(){
+            var annee = document.getElementById
+            ("annee").value;
+            // si l'année est divisible par 4 et non divisible par 100 OU si l'année est divisible par 400 (« divisible » signifie que la division donne un nombre entier, sans reste).
+            if((annee%4==0) && ((annee%100!=0) || (annee%400==0))){
+            alert("cette annee est bisextile")
+            }else{
+            alert("cette annee n'est pas bisextile");
+            };
+            }
+        </script>
+        <!-- ********************************************************* -->
+        <br><br><br>
+
+        <form class="form">
+            <label for="annee">entrez annee</label>
+            <input type="text" name="annee" id="annee">
+            <button type="submit">validez</button>
+        </form>
+
+        <script>
+            const form = document.querySelector('form');
+            let  annee = document.getElementById('annee');
+
+            form.addEventListener('submit' ,()=>{
+                if((annee%4==0) && ((annee%100!=0) || (annee%400==0))){
+            alert("cette annee est bisextile")
+            }else{
+            alert("cette annee n'est pas bisextile");
+            };
+            })
+        </script>
+
+
+
+
+<script src="./app.js"></script>
+</body>
+</html>
