@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+<!-- <button class="hidden" style="margin: 0 20px 0 18px;" type="submit" onsubmit="verif(event);">faire dispparaitre la calcul</button>
+<button class="block" type="submit" onsubmit="verif(event);">faire apparaitre la calcul</button>
+<form action="" class="form" onsubmit="calcul(event)">
+    <input type="number" id="nbre1">
+
+    <select name="" id="operateur">
+        <option value="+">Addition</option>
+        <option value="-">soustraction</option>
+        <option value="*">multiplication</option>
+        <option value="/">division</option>
+        <option value="%">Modulo</option>
+    </select>
+    <input type="number" id="nbre2">
+    <input type="submit" value="Ok"><br>
+
+    <div class="message" style="margin-top: 20px;">
+        <input type="text" class="message" disabled>
+    </div>
+</form> -->
+<!-- ************************************************************************ -->
+
+
+
+
+<div class="container " >
+    <button type="submit" onclick="affich();" class="btn btn-primary mb-4 mt-5">apparaitre / dispparaitre</button>
+    <form class="form1" onsubmit="calc(event)" style="background: orange; border:1px solid; padding:20px">
+        <div class="mb-4 " >
+          <input  type="number" class="form-control w-50" id="nbre1" >
+        </div>
+        <div class="d-flex">
+            <select class="form-select mb-4 w-50 " >
+                <option selected>Choisir votre opérateur</option>
+                <option style = "font-weight: bold;" value="+">Addition</option>
+                <option style = "font-weight: bold;" value="-">Soustraction</option>
+                <option style = "font-weight: bold;" value="/">Division</option>
+                <option style = "font-weight: bold;" value="*">Multiplication</option>
+                <option style = "font-weight: bold;" value="%">Modulo</option>  
+            </select>
+            <div id="message" class="form-text  px-3 mx-3 " style="font-size: 20px; color:black;"></div>
+        </div>
+        <div class="mb-4">
+          <input  type="number" class="form-control w-50" id="nbre2">
+          <div id="message" class="form-text"></div>
+        </div>
+        <button type="submit" class="btn btn-primary px-5 " id="btn">Ok</button>
+    </form>
+</div>
+<script>
+    var form1 = document.querySelector('.form1')
+    var message = document.querySelector('#message')
+    var btn1 = document.querySelector('.btn-primary')
+    var btn2 = document.querySelector('#btn')
+    
+    function affich(){
+    form1.toggleAttribute('hidden');
+    }
+    document.querySelector('#nbre1').onmouseover = function(){
+    message.innerHTML= "saisir un chiffre"
+    }
+    document.querySelector('#nbre2').onmouseover = function(){
+        message.innerHTML= "saisir un chiffre"
+    }
+    document.querySelector('.form-select').onmouseover = function(){
+        message.innerHTML= "selectionner un operateur: +-*/%"
+    }
+    var  result = 0
+
+    function calc(event){
+        event.preventDefault();
+        var nbr1 = parseInt(document.querySelector('#nbre1').value)
+        var nbr2 = parseInt(document.querySelector('#nbre2').value)
+        var formSelect = document.querySelector('.form-select').value
+        console.log(!isNaN(nbr2))
+        console.log(nbr2)
+
+        if( !isNaN(nbr1) || !isNaN(nbr2) ){
+            switch(formSelect){
+                case "+":
+                    result = nbr1+nbr2;
+                    break;
+                case "-":
+                    result = nbr1-nbr2;
+                    break;
+                case "*":
+                    result = nbr1*nbr2;
+                    break;
+                case "/":
+                    result = nbr1/nbr2;
+                    break;
+                case "%":
+                    result = nbr1%nbr2;
+                    break;
+                default:
+            }
+            alert(nbr1 +" "+formSelect+" "+ nbr2 + " = " + result);
+        }else{
+            console.log('ko')
+            message.innerHTML="saisir deux chiffre et choisir l'opérateur"
+            
+        }
+    }
+    
+ 
+</script>
+    <script src="./calcul.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    
+</body>
+</html>

@@ -83,18 +83,21 @@
 // ************************************************************************************
 
 var semaine =[ "lundi" , "mar" ,"mercredi" ,"jeudi", "vendredi"  , "samedi"  , "dimanche" ];
+// Supprimer un element du tableau
 semaine.pop();
 semaine.forEach(element => {
-    document.write(element + "<br>")
+document.write(element + "<br>")
 });
 document.write("<br>--------------------------------------</br>")
+
 semaine.push("dimanche")
 semaine.forEach(element => {
     document.write(element + "<br>")
 });
 // *******************************************************************
 document.write("<br>--------------------------------------</br>")
-semaine[1] ="Mardi"
+// chercher l'index de mardi par indexOf si on a un log tableau
+semaine[semaine.indexOf('mar')] ="Mardi"
 semaine.forEach(element => {
 document.write(element + "<br>")
 });
@@ -102,9 +105,7 @@ document.write(element + "<br>")
 document.write("le nombre de valeur du tableau est : "+ semaine.length)
 document.write("<br>--------------------------------------</br>")
 document.write("la cinqieme valeur du tableau est :   "+ semaine[4])
-
-const item = document.createElement('div')
-item.setAttribute('class', 'semaine')
-item.appendChild(DOM)
-
-// µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ
+// *****************************************************************
+document.write("<br>--------------------------------------</br>")
+salah=[semaine.replace("${semaine[0]}" , semaine[5])]
+document.write(salah)
