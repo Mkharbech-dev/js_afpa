@@ -31,12 +31,11 @@
 function envoyer(event){
 
     event.preventDefault();
-    var genre = document.querySelector('.genre') 
     var homme = document.querySelector('#title_m') 
     var femme = document.querySelector('#title_f') 
+    let myRegex = /^[a-zA-Z-\s]+$/;
     if(!homme.checked && !femme.checked){
     alert('saisir une civilité ')
-    // genre.setAttribute('class', "alert alert-danger")
     return false;
     }
     if(document.querySelector('#firstname').value == ""){;
@@ -44,6 +43,11 @@ function envoyer(event){
     document.querySelector('#firstname').focus();
     alert('entrer un nom ')
     return false;
+    }else if (myRegex.test(document.querySelector('#firstname').value) == false){
+    alert('saisir uniquement des lettres et des espaces dans le nom ')
+    document.querySelector('#firstname').style.border= '4px solid red '
+    document.querySelector('#firstname').focus();
+    return false;       
     }else{
     document.querySelector('#firstname').style.border= '4px solid green '
     }
@@ -52,6 +56,11 @@ function envoyer(event){
     document.querySelector('#lastname').focus();
     alert('entrer un prénom ')
     return false;
+    }else if (myRegex.test(document.querySelector('#lastname').value) == false){
+        alert('saisir uniquement des lettres et des espaces dans le prénom ')
+        document.querySelector('#lastname').style.border= '4px solid red '
+        document.querySelector('#lastname').focus();
+        return false;       
     }else{
     document.querySelector('#lastname').style.border= '4px solid green '
     }
