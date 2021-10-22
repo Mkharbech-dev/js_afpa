@@ -40,55 +40,55 @@ function envoyer(event){
     return false;
     }
     if(document.querySelector('#firstname').value == ""){;
-    document.querySelector('#firstname').setAttribute('class', "alert alert-danger")
+    document.querySelector('#firstname').style.border= '4px solid red '
     document.querySelector('#firstname').focus();
     alert('entrer un nom ')
     return false;
     }else{
-    document.querySelector('#firstname').setAttribute('class', "alert alert-success")
+    document.querySelector('#firstname').style.border= '4px solid green '
     }
     if(document.querySelector('#lastname').value == ""){
-    document.querySelector('#lastname').setAttribute('class', "alert alert-danger")
+    document.querySelector('#lastname').style.border= '4px solid red '
     document.querySelector('#lastname').focus();
     alert('entrer un prénom ')
     return false;
     }else{
-    document.querySelector('#lastname').setAttribute('class', "alert alert-success")
+    document.querySelector('#lastname').style.border= '4px solid green '
     }
 
 
     if(document.querySelector('#email').value == ""){
-    document.querySelector('#email').setAttribute('class', "alert alert-danger")
+    document.querySelector('#email').style.border= '4px solid red '
     document.querySelector('#email').focus();
     alert('entrer un email ')
     return false;
     }else{
-    document.querySelector('#email').setAttribute('class', "alert alert-success")
+    document.querySelector('#email').style.border= '4px solid green '
     }
 
 
 
     if(document.querySelector('#tel').value == ""){
-    document.querySelector('#tel').setAttribute('class', "alert alert-danger")
+    document.querySelector('#tel').style.border= '4px solid red '
     document.querySelector('#tel').focus();
     alert('entrer un tel ')
     return false;
     }else{
-    document.querySelector('#tel').setAttribute('class', "alert alert-success")
+    document.querySelector('#tel').style.border= '4px solid green '
     }
 
 
 
     if(document.querySelector('#message').value == ""){
     alert('entrer un texte svp ')
-    document.querySelector('#message').setAttribute('class', "alert alert-danger")
+    document.querySelector('#message').style.border= '4px solid red '
     document.querySelector('#message').focus();
     return false;
     }else if(document.querySelector('#message').value.length < 11){
-        document.querySelector('#message').setAttribute('class', "alert alert-danger")
+        document.querySelector('#message').style.border= '4px solid red '
         alert('entrer minimaum 10caractéres dans le message')
     }else{
-    document.querySelector('#message').setAttribute('class', "alert alert-success")
+    document.querySelector('#message').style.border= '4px solid green '
     }
 
     var agree = document.querySelector('#agree') 
